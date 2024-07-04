@@ -1,7 +1,3 @@
-def guardar_usuarios(nombre, usuario, password):
-    with open(nombre, "a") as archivo:
-        archivo.write(f"Usuario: {usuario}\n Password: {password}\n")
-
 def crear_usuario(database: str):
     nombre = f"{database}.txt"
     usuario = input("Introduce el nombre del nuevo usuario: ")
@@ -9,6 +5,10 @@ def crear_usuario(database: str):
     
     guardar_usuarios(nombre, usuario, password)
     print("Base de datos de usuarios guardada.")
+
+def guardar_usuarios(nombre, usuario, password):
+    with open(nombre, "a") as archivo:
+        archivo.write(f"Usuario: {usuario}\n Password: {password}\n")
 
 base_de_datos = input("Introduce el nombre de la base de datos: ")
 crear_usuario(base_de_datos)
